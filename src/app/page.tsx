@@ -161,7 +161,7 @@ export default function SpectreLandingPage() {
           </div>
 
           {/* SPECTRE Logo with glow - using mix-blend-mode to blend with globe */}
-          <div className="relative z-10 w-full max-w-2xl mx-auto pt-16 pb-8">
+          <div className="relative z-10 w-full max-w-2xl mx-auto pt-32 pb-8">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/assets/spectre-logo-green.png"
