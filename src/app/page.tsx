@@ -19,39 +19,53 @@ const WireframeGlobeLarge = () => (
   </svg>
 );
 
-// --- Monitor Icon with code lines and music note ---
+// --- Monitor Icon with code lines and music note (CRT retro style) ---
 const MonitorIcon = () => (
   <svg viewBox="0 0 100 80" className="w-24 h-20" fill="none" stroke="white" strokeWidth="2">
-    {/* Monitor frame */}
-    <rect x="5" y="5" width="90" height="55" rx="3" />
-    {/* Inner screen border */}
-    <rect x="10" y="10" width="80" height="45" rx="2" strokeWidth="1" opacity="0.5" />
-    {/* Code lines */}
-    <line x1="18" y1="20" x2="55" y2="20" strokeWidth="2" opacity="0.8" />
-    <line x1="18" y1="28" x2="45" y2="28" strokeWidth="2" opacity="0.6" />
-    <line x1="18" y1="36" x2="60" y2="36" strokeWidth="2" opacity="0.6" />
-    <line x1="18" y1="44" x2="38" y2="44" strokeWidth="2" opacity="0.6" />
-    {/* Music note */}
-    <circle cx="75" cy="42" r="5" fill="white" stroke="none" />
-    <line x1="80" y1="42" x2="80" y2="22" strokeWidth="2.5" />
-    <path d="M80 22 Q88 25 80 30" strokeWidth="2" fill="none" />
-    {/* Stand */}
-    <line x1="50" y1="60" x2="50" y2="70" strokeWidth="2.5" />
-    <line x1="32" y1="70" x2="68" y2="70" strokeWidth="2.5" />
+    {/* CRT Monitor frame - rounded corners for retro look */}
+    <rect x="5" y="5" width="90" height="55" rx="6" ry="6" />
+    {/* Inner screen bezel */}
+    <rect x="12" y="12" width="76" height="41" rx="3" strokeWidth="1.5" />
+    {/* Screen reflection line */}
+    <line x1="16" y1="16" x2="25" y2="16" strokeWidth="1" opacity="0.3" />
+    {/* Code lines - terminal style */}
+    <line x1="18" y1="22" x2="52" y2="22" strokeWidth="2" />
+    <line x1="18" y1="30" x2="42" y2="30" strokeWidth="2" opacity="0.7" />
+    <line x1="18" y1="38" x2="55" y2="38" strokeWidth="2" opacity="0.7" />
+    <line x1="18" y1="46" x2="35" y2="46" strokeWidth="2" opacity="0.5" />
+    {/* Music note - larger and more distinct */}
+    <circle cx="72" cy="42" r="6" fill="white" stroke="none" />
+    <line x1="78" y1="42" x2="78" y2="20" strokeWidth="3" />
+    <path d="M78 20 Q88 24 78 30" strokeWidth="2.5" fill="none" />
+    {/* Monitor stand - chunky retro style */}
+    <line x1="50" y1="60" x2="50" y2="70" strokeWidth="4" />
+    <line x1="30" y1="70" x2="70" y2="70" strokeWidth="3" />
+    {/* Base feet */}
+    <line x1="30" y1="70" x2="28" y2="75" strokeWidth="2" />
+    <line x1="70" y1="70" x2="72" y2="75" strokeWidth="2" />
   </svg>
 );
 
-// --- Globe Icon for Info (with ..info.. text inside) ---
+// --- Globe Icon for Info (with separate badge element) ---
 const GlobeInfoIcon = () => (
-  <svg viewBox="0 0 90 90" className="w-20 h-20" fill="none" stroke="white" strokeWidth="1.5">
-    <circle cx="45" cy="45" r="40" />
-    <ellipse cx="45" cy="45" rx="40" ry="16" />
-    <ellipse cx="45" cy="45" rx="16" ry="40" />
-    <line x1="45" y1="5" x2="45" y2="85" strokeWidth="1" opacity="0.7" />
-    <line x1="5" y1="45" x2="85" y2="45" strokeWidth="1" opacity="0.7" />
-    {/* ..info.. text */}
-    <text x="45" y="49" textAnchor="middle" fill="white" fontSize="10" fontFamily="monospace" opacity="0.8">..info..</text>
-  </svg>
+  <div className="relative">
+    <svg viewBox="0 0 90 90" className="w-20 h-20" fill="none" stroke="white" strokeWidth="1.5">
+      <circle cx="45" cy="45" r="40" />
+      <ellipse cx="45" cy="45" rx="40" ry="16" />
+      <ellipse cx="45" cy="45" rx="16" ry="40" />
+      <line x1="45" y1="5" x2="45" y2="85" strokeWidth="1" opacity="0.7" />
+      <line x1="5" y1="45" x2="85" y2="45" strokeWidth="1" opacity="0.7" />
+    </svg>
+    {/* Separate info badge */}
+    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-black border border-white/60 px-2 py-0.5 rounded-sm">
+      <span className="text-[8px] font-mono text-white/80 tracking-wider">.info.</span>
+    </div>
+    {/* Decorative dots */}
+    <div className="absolute top-0 right-0 flex gap-0.5">
+      <span className="w-1 h-1 bg-white/50 rounded-full" />
+      <span className="w-1 h-1 bg-white/50 rounded-full" />
+    </div>
+  </div>
 );
 
 // --- Calendar with Alien Face ---
@@ -101,13 +115,35 @@ const MascotHead = () => (
   </svg>
 );
 
+// --- Large Central Wireframe Globe ---
+const CentralWireframeGlobe = () => (
+  <svg viewBox="0 0 300 300" className="w-full h-full" fill="none" stroke="white" strokeWidth="0.6">
+    <circle cx="150" cy="150" r="140" />
+    {/* Horizontal ellipses */}
+    <ellipse cx="150" cy="150" rx="140" ry="20" />
+    <ellipse cx="150" cy="150" rx="140" ry="45" />
+    <ellipse cx="150" cy="150" rx="140" ry="70" />
+    <ellipse cx="150" cy="150" rx="140" ry="95" />
+    <ellipse cx="150" cy="150" rx="140" ry="120" />
+    {/* Vertical ellipses */}
+    <ellipse cx="150" cy="150" rx="20" ry="140" />
+    <ellipse cx="150" cy="150" rx="45" ry="140" />
+    <ellipse cx="150" cy="150" rx="70" ry="140" />
+    <ellipse cx="150" cy="150" rx="95" ry="140" />
+    <ellipse cx="150" cy="150" rx="120" ry="140" />
+    {/* Cross lines */}
+    <line x1="150" y1="10" x2="150" y2="290" />
+    <line x1="10" y1="150" x2="290" y2="150" />
+  </svg>
+);
+
 // --- Main Component ---
 export default function SpectreLandingPage() {
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
-      {/* Noise texture overlay */}
+      {/* Noise texture overlay - increased opacity for grunge effect */}
       <div
-        className="fixed inset-0 opacity-[0.02] pointer-events-none z-50"
+        className="fixed inset-0 opacity-[0.06] pointer-events-none z-50"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`
         }}
@@ -115,23 +151,27 @@ export default function SpectreLandingPage() {
 
       <div className="relative mx-auto flex flex-col min-h-screen max-w-5xl px-4 py-8 md:px-8">
 
-        {/* === HERO / LOGO SECTION === */}
-        <section className="relative flex flex-col items-center pt-2 pb-8">
-          {/* SPECTRE Logo with glow */}
-          <div className="relative w-full max-w-2xl">
+        {/* === COMBINED HERO + NAV SECTION WITH GLOBE === */}
+        <section className="relative flex-1 flex flex-col">
+          {/* Large wireframe globe positioned behind logo and nav - centered vertically */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ top: '-5%' }}>
+            <div className="w-80 h-80 md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] opacity-35">
+              <CentralWireframeGlobe />
+            </div>
+          </div>
+
+          {/* SPECTRE Logo with glow - using mix-blend-mode to blend with globe */}
+          <div className="relative z-10 w-full max-w-2xl mx-auto pt-2 pb-8">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/assets/spectre-logo-green.png"
               alt="SPECTRE"
-              className="mx-auto w-full drop-shadow-[0_0_60px_rgba(38,255,106,0.5)]"
+              className="mx-auto w-full drop-shadow-[0_0_60px_rgba(38,255,106,0.5)] mix-blend-lighten"
             />
           </div>
-        </section>
 
-        {/* === TRI-NAV SECTION === */}
-        <section className="relative py-6">
           {/* Navigation titles and icons row */}
-          <div className="flex justify-center items-start gap-12 md:gap-20 lg:gap-28">
+          <div className="relative z-10 flex justify-center items-start gap-12 md:gap-20 lg:gap-28 py-6">
 
             {/* WEB SHOP */}
             <div className="flex flex-col items-center gap-4 cursor-pointer group">
@@ -143,21 +183,13 @@ export default function SpectreLandingPage() {
               </div>
             </div>
 
-            {/* INFO - with large wireframe globe behind */}
+            {/* INFO */}
             <div className="flex flex-col items-center gap-4 cursor-pointer group relative">
               <h2 className="font-rajdhani text-lg md:text-2xl font-bold tracking-[0.15em] group-hover:text-[#26ff6a] transition-colors">
                 INFO
               </h2>
-              <div className="relative">
-                {/* Large wireframe globe background */}
-                <div className="absolute -inset-6 md:-inset-10 flex items-center justify-center opacity-30">
-                  <div className="w-36 h-36 md:w-48 md:h-48">
-                    <WireframeGlobeLarge />
-                  </div>
-                </div>
-                <div className="relative z-10 group-hover:drop-shadow-[0_0_15px_rgba(38,255,106,0.6)] transition-all">
-                  <GlobeInfoIcon />
-                </div>
+              <div className="relative z-10 group-hover:drop-shadow-[0_0_15px_rgba(38,255,106,0.6)] transition-all">
+                <GlobeInfoIcon />
               </div>
             </div>
 
@@ -172,9 +204,6 @@ export default function SpectreLandingPage() {
             </div>
           </div>
         </section>
-
-        {/* Spacer to push promo band down */}
-        <div className="flex-1" />
 
         {/* === PROMO BAND SECTION === */}
         <section className="relative py-6 border-t border-white/20">
