@@ -166,7 +166,7 @@ export default function SpectreLandingPage() {
             <img
               src="/assets/spectre-logo-green.png"
               alt="SPECTRE"
-              className="mx-auto w-full drop-shadow-[0_0_60px_rgba(38,255,106,0.5)] mix-blend-lighten"
+              className="mx-auto w-full drop-shadow-[0_0_60px_rgba(38,255,106,0.5)]"
             />
           </div>
 
