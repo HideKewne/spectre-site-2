@@ -155,7 +155,7 @@ export default function SpectreLandingPage() {
         <section className="relative flex-1 flex flex-col">
           {/* Large wireframe globe positioned behind logo and nav - centered vertically */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ top: '-5%' }}>
-            <div className="w-80 h-80 md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px] opacity-35">
+            <div className="w-56 h-56 md:w-[300px] md:h-[300px] lg:w-[380px] lg:h-[380px] opacity-35">
               <CentralWireframeGlobe />
             </div>
           </div>
